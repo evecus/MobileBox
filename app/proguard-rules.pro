@@ -1,0 +1,9 @@
+-keep class com.github.tvbox.mobile.bean.** { *; }
+-keep class com.orhanobut.hawk.** { *; }
+-keep class com.lzy.okgo.** { *; }
+-dontwarn com.squareup.**
+-dontwarn okio.**
+-keep class com.google.gson.** { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer

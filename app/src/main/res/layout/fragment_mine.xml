@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_secondary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color_bg_primary"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            android:textColor="@color/color_text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <!-- Quick actions -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_bg_primary"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
+
+                <!-- Collect -->
+                <LinearLayout
+                    android:id="@+id/ll_collect"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_favorite"
+                        android:tint="@color/color_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="收藏"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- History -->
+                <LinearLayout
+                    android:id="@+id/ll_history"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_history"
+                        android:tint="@color/color_primary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="历史"
+                        android:textColor="@color/color_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp"
+                android:background="@color/color_bg_secondary" />
+
+            <!-- Settings group 1: Sources -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="6dp"
+                android:text="内容源"
+                android:textColor="@color/color_text_hint"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_bg_primary"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_setting_row"
+                    android:id="@+id/row_subscribe_api" />
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp" android:background="@color/color_divider" />
+                <include layout="@layout/item_setting_row"
+                    android:id="@+id/row_live_source" />
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp"
+                android:background="@color/color_bg_secondary" />
+
+            <!-- Settings group 2: Player -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="6dp"
+                android:text="播放器"
+                android:textColor="@color/color_text_hint"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_bg_primary"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_setting_row"
+                    android:id="@+id/row_player_engine" />
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp" android:background="@color/color_divider" />
+                <include layout="@layout/item_setting_row"
+                    android:id="@+id/row_decode_mode" />
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:layout_marginStart="16dp" android:background="@color/color_divider" />
+                <include layout="@layout/item_setting_row"
+                    android:id="@+id/row_player_misc" />
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="8dp"
+                android:background="@color/color_bg_secondary" />
+
+            <!-- Settings group 3: App -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="6dp"
+                android:text="应用"
+                android:textColor="@color/color_text_hint"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_bg_primary"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_setting_row"
+                    android:id="@+id/row_about" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

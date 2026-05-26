@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_secondary"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color_bg_primary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back"
+            android:tint="@color/color_text_primary" />
+
+        <TextView
+            android:id="@+id/tv_setting_page_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textColor="@color/color_text_primary"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/color_divider" />
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingBottom="40dp">
+
+            <!-- API Section -->
+            <LinearLayout android:id="@+id/layout_setting_api"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingTop="16dp">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingStart="16dp" android:paddingBottom="8dp"
+                    android:text="订阅接口地址（TVBox JSON格式）"
+                    android:textColor="@color/color_text_hint" android:textSize="12sp" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@color/color_bg_primary"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline" app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp" app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:hintText="https://example.com/api.json">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_api_url"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textUri" android:maxLines="3"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp" android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_clear_api"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content" android:layout_height="40dp"
+                            android:text="清除" android:textColor="@color/color_text_secondary" />
+
+                        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_save_api"
+                            android:layout_width="wrap_content" android:layout_height="40dp"
+                            android:text="保存" android:backgroundTint="@color/color_primary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Live Section -->
+            <LinearLayout android:id="@+id/layout_setting_live"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingTop="16dp">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingStart="16dp" android:paddingBottom="8dp"
+                    android:text="直播源地址（M3U 或 TXT 格式）"
+                    android:textColor="@color/color_text_hint" android:textSize="12sp" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@color/color_bg_primary"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        app:boxBackgroundMode="outline" app:boxCornerRadiusTopStart="8dp"
+                        app:boxCornerRadiusTopEnd="8dp" app:boxCornerRadiusBottomStart="8dp"
+                        app:boxCornerRadiusBottomEnd="8dp"
+                        app:hintText="https://example.com/live.m3u">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_live_url"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:inputType="textUri" android:maxLines="3"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_save_live"
+                        android:layout_width="wrap_content" android:layout_height="40dp"
+                        android:layout_marginTop="14dp" android:layout_gravity="end"
+                        android:text="保存" android:backgroundTint="@color/color_primary" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Player Section -->
+            <LinearLayout android:id="@+id/layout_setting_player"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingTop="16dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@color/color_bg_primary" android:orientation="vertical">
+
+                    <!-- Player engine row -->
+                    <LinearLayout android:id="@+id/row_player_engine_pick"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical" android:orientation="horizontal"
+                        android:paddingStart="16dp" android:paddingEnd="16dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="播放器内核"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" />
+                        <TextView android:id="@+id/tv_player_engine_value"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:textColor="@color/color_text_hint" android:textSize="13sp" />
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:tint="@color/color_text_hint" />
+                    </LinearLayout>
+
+                    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                        android:layout_marginStart="16dp" android:background="@color/color_divider" />
+
+                    <!-- Decode row -->
+                    <LinearLayout android:id="@+id/row_decode_pick"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical" android:orientation="horizontal"
+                        android:paddingStart="16dp" android:paddingEnd="16dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="解码方式"
+                            android:textColor="@color/color_text_primary" android:textSize="14sp" />
+                        <TextView android:id="@+id/tv_decode_value"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:textColor="@color/color_text_hint" android:textSize="13sp" />
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            android:tint="@color/color_text_hint" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- About Section -->
+            <LinearLayout android:id="@+id/layout_setting_about"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingTop="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@color/color_bg_primary" android:orientation="vertical"
+                    android:gravity="center" android:paddingTop="32dp" android:paddingBottom="32dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="MobileBox" android:textSize="22sp" android:textStyle="bold"
+                        android:textColor="@color/color_text_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="手机版 TVBox · 白色现代界面"
+                        android:textColor="@color/color_text_secondary" android:textSize="13sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="基于 takagen99/Box · TVBoxOS"
+                        android:textColor="@color/color_text_hint" android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
